@@ -1,0 +1,10 @@
+php artisan package:save yashiroiori\\aclmanagertabler /packages/yashiroiori/aclmanagertabler
+// controller
+php artisan package:controller CustomerController -r
+// policy
+php artisan package:policy ErpCustomerPolicy --model=\\Yashiroiori\\ErpCustomer\\Models\\Customer
+
+*Migrate path vendor
+php artisan migrate --path=vendor/yashiroiori/erpcustomer/database/migrations
+php artisan seed --path=vendor/yashiroiori/erpcustomer/database/seeds
+php artisan db:seed --class=Yashiroiori\\ErpCustomer\\Database\\Seeds\\ErpCustomeresTableSeeder
